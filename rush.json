@@ -3,7 +3,7 @@
  * For full documentation, please see https://rushjs.io
  */
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/rush/v5/rush.schema.json",
+  "$schema": "/Users/williamhuang/Developer/rushstack/libraries/rush-lib/src/schemas/rush.schema.json",
 
   /**
    * (Required) This specifies the version of the Rush engine to be used in this repo.
@@ -412,9 +412,13 @@
        * locally linked because it would create a cyclic dependency; instead, the last published
        * version will be installed in the Common folder.
        */
-      "cyclicDependencyProjects": [
-        // "my-toolchain"
-      ],
+      // "cyclicDependencyProjects": [
+      //   // "my-toolchain"
+      //   "lodash"
+      // ],
+      "decoupledLocalDependencies": [
+        "lodash"
+      ]
 
       /**
        * If true, then this project will be ignored by the "rush check" command.
@@ -447,7 +451,7 @@
     },
 
     {
-      "packageName": "my-controls",
+      "packageName": "lodash",
       "projectFolder": "libraries/my-controls",
       "reviewCategory": "production"
     },
